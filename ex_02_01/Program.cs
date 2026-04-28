@@ -1,26 +1,19 @@
 ﻿namespace ex_02_01;
-
+// インスタンスの生成
 static class Program
 {
     static void Main(string[] args)
     {
-        string day = "明日";
-        string wether = "休み";
-        // 可変数の引数を渡せる
-        StringConcatenation(day, "は", wether, "です。");
-        /// <summary>
-        /// 引数の文字列を結合して表示する
-        /// </summary>
-        /// <param name="strings">結合する文字列</param>
-        static void StringConcatenation(params string[] strings)
-        {
-            var result = "";
-            for (int i = 0; i < strings.Length; i++)
-            {
-                result += strings[i];
-            }
-            Console.WriteLine(result);
-        }
+        Warrior warrior = new();
+        Monster monster = new();
+        // フィールドに値を設定
+        warrior.name = "ユータ";
+        monster.name = "ゴブ";
+        // メソッドの利用
+        string meter1 = warrior.GetHpMeter();// 初期の戦士のHPを取得
+        Console.WriteLine(meter1); // 戦士のHPを表示
+        monster.Attack(warrior); // 魔物が戦士に攻撃
+        string meter2 = warrior.GetHpMeter();// 攻撃を受けた後の戦士のHPを取得
+        Console.WriteLine(meter2); // 戦士のHPを表示
     }
-
 }
