@@ -4,19 +4,23 @@ static class Program
 {
     static void Main(string[] args)
     {
-        bool a = true, b = false;
-        Console.WriteLine($"a && a = {a && a}");
-        Console.WriteLine($"a && b = {a && b}");
-        Console.WriteLine($"b && a = {b && a}");
-        Console.WriteLine($"b && b = {b && b}");
-        Console.WriteLine($"a || a = {a || a}");
-        Console.WriteLine($"a || b = {a || b}");
-        Console.WriteLine($"b || a = {b || a}");
-        Console.WriteLine($"b || b = {b || b}");
-        int x = 1;
-        Console.WriteLine($"b && x++ > 1 = {b && x++ > 1}");
-        Console.WriteLine($"x = {x}");
-        Console.WriteLine($"b & x++ > 1 = {b & x++ > 1}");
-        Console.WriteLine($"x = {x}");  
+        Console.Write("値1を入力してください->");
+        var a = int.Parse(Console.ReadLine());
+        Console.Write("値2を入力してください->");
+        var b = int.Parse(Console.ReadLine());
+        if (a == b)
+        {
+            Console.WriteLine("値1と値2は等しい");
+        }
+        else if (a > b)
+        {
+            Console.WriteLine("値1は値2より大きい");
+        }
+        else
+        {
+            Console.WriteLine("値1は値2より小さい");
+        }
+        Console.WriteLine("終了");
+        
     }
 }
