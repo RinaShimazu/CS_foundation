@@ -1,6 +1,4 @@
-﻿using System.Globalization;
-
-namespace Ex_03_02;
+﻿namespace Ex_03_03;
 
 static class Program
 {
@@ -22,8 +20,10 @@ static class Program
         Console.WriteLine($"商品名を入力してください->{item.itemName}");
         Console.WriteLine($"価格を入力してください->{item.price}");
     }
+    public void ChangePrice(int pprice)
+    {
+        int pprice = int.Parse(Console.ReadLine());
+        item.pprice = pprice;
+        Console.WriteLine($"新しい価格を入力してください->{item.pprice}");
+    }
 }
-
-
-
-
