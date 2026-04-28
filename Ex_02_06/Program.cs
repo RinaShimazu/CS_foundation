@@ -1,6 +1,4 @@
-﻿using System.Globalization;
-
-namespace Ex_02_05;
+﻿namespace Ex_02_06;
 
 static class Program
 {
@@ -9,17 +7,13 @@ static class Program
         int number = int.Parse(System.Console.ReadLine());
         Console.WriteLine("数値を入力してください->" + number);
 
-        if (number % 2 == 0)
+        if (number % 4 == 0)
         {
-            Console.WriteLine("結果：" + number * 10);
+            Console.WriteLine("4の倍数です");
         }
         else
         {
-            Console.WriteLine("結果" + number);
+            Console.WriteLine("4の倍数ではありません");
         }
-
-
     }
 }
-
-
