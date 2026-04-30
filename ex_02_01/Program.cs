@@ -4,16 +4,19 @@ static class Program
 {
     static void Main(string[] args)
     {
-        Warrior warrior = new();
-        Monster monster = new();
-        // フィールドに値を設定
-        warrior.name = "ユータ";
-        monster.name = "ゴブ";
-        // メソッドの利用
-        string meter1 = warrior.GetHpMeter();// 初期の戦士のHPを取得
-        Console.WriteLine(meter1); // 戦士のHPを表示
-        monster.Attack(warrior); // 魔物が戦士に攻撃
-        string meter2 = warrior.GetHpMeter();// 攻撃を受けた後の戦士のHPを取得
-        Console.WriteLine(meter2); // 戦士のHPを表示
+        Warrior warrior = new("ユータ", 15);
+        Console.WriteLine(warrior.name);
+        Console.WriteLine(warrior.hp);
+
+        Warrior warrior2 = new();
+        warrior2.name = "ユースケ";
+        warrior2.hp = 8;
+        Console.WriteLine(warrior2.name);
+        Console.WriteLine(warrior2.hp);
+
+        Warrior warrior3 = new("ユダ");
+        warrior3.hp = 777;
+        Console.WriteLine(warrior3.name);
+        Console.WriteLine(warrior3.hp);
     }
 }
