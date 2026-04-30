@@ -1,4 +1,4 @@
-namespace Ex_03_05;
+namespace Ex_03_06;
 
 /// <summary>
 /// 商品を表すクラス
@@ -10,7 +10,25 @@ public class Item
     public int price;       // 単価
     public double salesTaxRate = 0.10; // 消費税率(10%)
 
-
+    /// <summary>
+    /// 模範解答
+    /// </summary>
+    public Item()
+    {
+    }
+    /// <summary>
+    /// 模範解答
+    /// </summary>
+    /// <param name="pitemNo">商品番号</param>
+    /// <param name="pitemName">商品名</param>
+    /// <param name="pprice">単価</param>
+    public Item(int pitemNo, string pitemName, int pprice)
+    {
+        // フィールドに引数をセット
+        itemNo = pitemNo;
+        itemName = pitemName;
+        price = pprice;
+    }
 
     /// <summary>
     /// 模範解答
@@ -21,11 +39,20 @@ public class Item
         Console.WriteLine($"商品名={itemName}");
         Console.WriteLine($"単価={price}");
     }
-
+    /// <summary>
+    /// 模範解答
+    /// </summary>
+    /// <param name="pprice">単価</param>
     public void ChangePrice(int pprice)
     {
         price = pprice;
     }
+
+    public void ChangePrice(string pprice)
+    {
+        price = int.Parse(pprice);
+    }
+
     /// <summary>
     /// 模範解答
     /// </summary>
@@ -36,18 +63,5 @@ public class Item
         return (int)result;
     }
 
-    /// <summary>
-    /// 模範解答
-    /// </summary>
-    /// <param name="price">金額</param>
-    public void CalculateTaxAmountRef(ref int price)
-    {
-        price = (int)(price + (price * salesTaxRate));
-    }
-}lic Item(int pitemNo, string pitemName, int pprice)
-    {
-        // フィールドに引数をセット
-        itemNo = pitemNo;
-        itemName = pitemName;
-        price = pprice;
-    }
+
+}

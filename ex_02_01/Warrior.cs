@@ -1,30 +1,14 @@
 namespace ex_02_01;
-/// <summary>
-/// 戦士を表すクラス
-/// </summary>
-public class Warrior
+
+
+public class Warrior : Human
 {
-    public string name;     // 名前を表すフィールド
-    public int hp = 10;     // 体力を表すフィールド
-    public int ap = 5;      // 攻撃力を表すフィールド
-    public int dp;          // 防御力を表すフィールド
-    public Warrior()
+    public int Ap { get; set; } = 5;
+    public int Dp { get; set; }
+
+    public void Attack()
     {
-        name = "aaa";
-        hp = 50000;
-    }
-    /// <summary>
-    /// コンストラクタ
-    /// </summary>
-    /// <param name="pname">nameフィールドに設定する値</param>
-    /// <param name="php">hpフィールドに設定する値</param>
-    public Warrior(string pname, int php)
-    {
-        name = pname;
-        hp = php;
-    }
-    public Warrior(string pname)
-    {
-        name = pname;
+        Console.WriteLine("戦士は攻撃した！");
+        Console.WriteLine($"{Ap}のダメージを与えた。");
     }
 }
