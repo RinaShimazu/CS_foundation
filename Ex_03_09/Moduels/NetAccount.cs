@@ -1,10 +1,23 @@
-namespace Ex_03_09;
+namespace Ex_03_09.Modules;
 
 public class NetAccount : Account
 {
-    public int Point { get; set; }
-    public override string ToString();
+    public int Point { get; set; }  // ポイントを表すプロパティ
 
-    public NetAccount(string AccountNo, string AccountName, int Balance, int Point) : base(AccountNo, AccountName, Balance)
+    public NetAccount(string AccountNo, string AccountName, int Balance, int Point)
+    : base(AccountNo, AccountName, Balance)
+    {
+        this.Point = Point;
+    }
 
+    public override void Print()
+    {
+        base.Print();
+        Console.Write($"ポイント={Point} ");
+    }
+
+    public override string ToString()
+    {
+        return $"[NetAccount {base.ToString()},Point={Point}]";
+    }
 }

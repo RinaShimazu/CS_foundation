@@ -1,23 +1,21 @@
-﻿using System.Security.Cryptography.X509Certificates;
-
+﻿using Ex_03_09.Modules;
 namespace Ex_03_09;
 
 static class Program
 {
     static void Main(string[] args)
     {
-        NetAccount info = new NetAccount();
-
         Console.Write("口座番号を入力してください->");
-        info.AccountNo = (Console.ReadLine());
+        string? no = Console.ReadLine();
         Console.Write("口座名義を入力してください->");
-        info.AccountName = Console.ReadLine();
+        string? name = Console.ReadLine();
         Console.Write("残高を入力してください->");
-        info.Balance = int.Parse(Console.ReadLine());
+        int balance = int.Parse(Console.ReadLine()!);
         Console.Write("ポイントを入力してください->");
-        info.Point = int.Parse(Console.ReadLine());
-
-
+        int point = int.Parse(Console.ReadLine()!);
+        NetAccount netAccount = new NetAccount(no!, name!, balance, point);
+        Console.WriteLine("結果");
+        netAccount.Print();
+        Console.WriteLine(netAccount.ToString());
     }
 }
-

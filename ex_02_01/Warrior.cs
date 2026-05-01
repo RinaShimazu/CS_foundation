@@ -1,14 +1,26 @@
 namespace ex_02_01;
 
-
-public class Warrior : Human
+public class Warrior
 {
-    public int Ap { get; set; } = 5;
-    public int Dp { get; set; }
+    public static int cnt = 0;
 
-    public void Attack()
+    public string name;
+    public int braveNum;
+
+    public Warrior(string pname)
     {
-        Console.WriteLine("戦士は攻撃した！");
-        Console.WriteLine($"{Ap}のダメージを与えた。");
+        cnt++;
+        name = pname;
+        braveNum = cnt;
+    }
+
+    public void Greet()
+    {
+        Console.WriteLine($"こんにちは。{braveNum}人目の戦士{name}です");
+    }
+
+    public static void ShowHeroNum()
+    {
+        Console.WriteLine($"現在、この世界には{cnt}人の戦士がいます");
     }
 }

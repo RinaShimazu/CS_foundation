@@ -26,10 +26,7 @@ public class Item
     {
         price = pprice;
     }
-    /// <summary>
-    /// 模範解答
-    /// </summary>
-    /// <returns>消費税込み金額</returns>
+
     public int CalculateTaxAmount()
     {
         double result = price + (price * salesTaxRate);
