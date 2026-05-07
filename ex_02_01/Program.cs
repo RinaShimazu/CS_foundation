@@ -1,19 +1,31 @@
 ﻿namespace ex_02_01;
 
+using System.Numerics;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+
+
+
 static class Program
 {
-    static void Main(string[] args)
+    static void Main(string[] aregs)
     {
-        DateTime now = DateTime.Now;
-        Console.WriteLine($"現在日時:{now}");
-        Console.WriteLine($"曜日番号:{now.DayOfWeek}");
-        Console.WriteLine($"年月日:{now.Year}/{now.Month}/{now.Day}");
-        Console.WriteLine($"now.ToLongDateString():{now.ToLongDateString()}");
-        Console.WriteLine($"now.ToLongTimeString():{now.ToLongTimeString()}");
-        Console.WriteLine($"now.ToShortDateString():{now.ToShortDateString()}");
-        Console.WriteLine($"now.ToShortTimeString():{now.ToShortTimeString()}");
-        DateTime after = now.AddDays(40);
-        Console.WriteLine($"after.ToShortDateString():{after.ToShortDateString()}");
 
+
+
+        var item = new Item() { Id = 100, Name = "みかん", Price = 150 };
+
+        var jsonStr = JsonConvert.SerializeObject(item);
+        Console.WriteLine(jsonStr);
+
+        var item2 = JsonConvert.DeserializeObject<Item>(jsonStr);
+        Console.WriteLine(item2);
+
+        JObject jsonObj = JObject.Parse(jsonStr);
+        Console.WriteLine($"Id:{jsonObj["Id"]}");
+        Console.WriteLine($"Name:{jsonObj["Name"]}");
+        Console.WriteLine($"Price:{jsonObj["Price"]}");
     }
 }
+
+
